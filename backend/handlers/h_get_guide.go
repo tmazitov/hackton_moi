@@ -5,12 +5,14 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/tmazitov/hahaton_moi/models"
+	"github.com/tmazitov/hahaton_moi/stats"
 	"github.com/tmazitov/hahaton_moi/storage"
 	"github.com/tmazitov/service"
 )
 
 type GetGuideHandler struct {
-	storage *storage.Storage
+	storage    *storage.Storage
+	statsSaver *stats.StatsSaver
 	service.HandlerMonoWriteBehavior[[]*models.Step]
 }
 
@@ -31,6 +33,7 @@ func (h *GetGuideHandler) Handle(ctx *gin.Context) {
 	var (
 		err     error
 		guideId int
+		search  string = ctx.Query("search")
 	)
 
 	if guideId, err = getGuideId(ctx); err != nil {
@@ -41,5 +44,10 @@ func (h *GetGuideHandler) Handle(ctx *gin.Context) {
 	if h.Output, err = h.storage.GetGuideSteps(ctx, guideId); err != nil {
 		ctx.JSON(500, gin.H{"error": err.Error()})
 		return
+	}
+
+	h.statsSaver.RecordChan <- &models.StatisticRecord{
+		Search:  search,
+		GuideId: guideId,
 	}
 }

@@ -4,6 +4,7 @@ import (
 	"flag"
 
 	"github.com/tmazitov/hahaton_moi/handlers"
+	"github.com/tmazitov/hahaton_moi/stats"
 	"github.com/tmazitov/hahaton_moi/storage"
 	"github.com/tmazitov/service"
 )
@@ -29,12 +30,17 @@ func main() {
 			Prefix:  "moi",
 			Version: "v0",
 		})
-		store  *storage.Storage
-		config *Config = setupFlags()
+		store      *storage.Storage
+		statsSaver *stats.StatsSaver
+		config     *Config = setupFlags()
 	)
 
 	store = storage.NewStorage(config.StorageURL)
 
-	s.SetupHandlers(handlers.Endpoints(store))
+	statsSaver = stats.NewStatsSaver(store)
+	defer statsSaver.Close()
+
+	s.SetupHandlers(handlers.Endpoints(statsSaver, store))
+	go statsSaver.Run()
 	s.Start()
 }
