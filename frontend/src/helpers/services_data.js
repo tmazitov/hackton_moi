@@ -22,7 +22,8 @@ const services_data = {
                     "name" : "Traffic Fines History"
                 },
                 {
-                    "name" : "Issue a Minor Traffic Accident Report"
+                    "name" : "Issue a Minor Traffic Accident Report",
+					
                 },
                 {
                     "name" : "Respond to Unknown Minor Traffic Accident"

@@ -1,4 +1,6 @@
 .services{
+	width: 100%;
+	overflow: scroll;
 	.header{
 		position: fixed;
 		display: flex;
@@ -8,10 +10,11 @@
 			width: 300px;
 		}
 		.switch{
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			height: 40px;
 			width: 40px;
-
-			border: 1px solid white;
 		}
 	}
 }
