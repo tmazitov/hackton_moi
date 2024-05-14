@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  moi:
+    build: ./backend
+    ports:
+      - "5050:5050"
+    depends_on:
+      - postgres
+
+  postgres:
+    build: ./backend/db
+    environment:
+      - POSTGRES_DB=test_db
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=test_client
+      - POSTGRES_PASSWORD=test_client
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  goose:
+    build: ./backend/db/migrations
+    environment:
+      - DB_NAME=test_db
+      - DB_USER=test_client
+      - DB_PASS=test_client
+      - DB_ADDR=postgres:5432
+      - DB_SSL=false
+      - GOOSE_DRIVER=postgres
+      - GOOSE_URL=postgresql://test_client:test_client@postgres:5432/test_db?sslmode=disable
+    depends_on:
+      - postgres
+    
+
+volumes:
+  pgdata:
