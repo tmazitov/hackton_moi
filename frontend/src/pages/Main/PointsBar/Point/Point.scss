@@ -1,0 +1,18 @@
+.point{
+	margin: 5px;
+	width: 30%;
+	height: 100%;
+	background-color: var(--color--block);
+	border-radius: 5px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	.point_score{
+		height: 20px;
+	}
+	.point_name{
+		height: 20px;
+	}
+}

@@ -1,0 +1,29 @@
+.profile-container{
+	height: 110px;
+	width: 100%;
+
+	//border: 1px black solid;
+	position: relative;
+
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	.profile-photo{
+		height: 90px;
+		width: 90px;
+		border-radius: 45px;
+		box-sizing: border-box;
+
+		background-color: var(--color--main);
+		padding: 5px;
+	}
+	.profile__data{
+		.data-name{
+			font-size: 24px;
+		}
+		.data-nationality{
+			font-size: 16px;
+		}
+	}
+}
