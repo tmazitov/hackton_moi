@@ -1,0 +1,17 @@
+.services{
+	.header{
+		position: fixed;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		.limit{
+			width: 300px;
+		}
+		.switch{
+			height: 40px;
+			width: 40px;
+
+			border: 1px solid white;
+		}
+	}
+}

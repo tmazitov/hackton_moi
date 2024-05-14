@@ -9,6 +9,7 @@ box-sizing: border-box;}
 a:focus,a:active{outline: none;}
 nav,footer,header,aside{display: block;}
 html,body{
+	color: white;
    height: 100%;
    width: 100%;
    font-size: 100%;
@@ -32,11 +33,15 @@ html,body{
  h1,h2,h3,h4,h5,h6{font-size: inherit; font-weight: 400;}
 
 :root{
-	--color--main: rgb(39, 67, 154);
-	--color--foundation: rgb(133, 247, 251);
-	--color--block: rgba(3, 74, 141, 0.5);
+	--color--main: rgba(16,57,123,255);
+	--color--foundation: rgba(82,129,181,255);
+	--color--block: rgba(255, 255, 255, 0.15);
 }
 
 html{
-	background-color: var(--color--foundation)
+	background-color: var(--color--foundation);
+}
+#root{
+	height: 100%;
+	width: 100%;
 }

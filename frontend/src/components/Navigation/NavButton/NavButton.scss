@@ -1,0 +1,17 @@
+
+.nav-button{
+	width: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	color: white;
+	.nav-button_icon{
+		border: 1px solid white;
+		width: 50px;
+		height: 50px;
+	}
+	.nav-button_name{
+		color: white;
+	}
+}
