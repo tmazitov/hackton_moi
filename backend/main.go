@@ -3,9 +3,9 @@ package main
 import (
 	"flag"
 
-	"github.com/tmazitov/hahaton_moi/handlers"
-	"github.com/tmazitov/hahaton_moi/stats"
-	"github.com/tmazitov/hahaton_moi/storage"
+	"github.com/tmazitov/hackton_moi/handlers"
+	"github.com/tmazitov/hackton_moi/stats"
+	"github.com/tmazitov/hackton_moi/storage"
 	"github.com/tmazitov/service"
 )
 

@@ -2,8 +2,8 @@ package handlers
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/tmazitov/hahaton_moi/models"
-	"github.com/tmazitov/hahaton_moi/storage"
+	"github.com/tmazitov/hackton_moi/models"
+	"github.com/tmazitov/hackton_moi/storage"
 	"github.com/tmazitov/service"
 )
 

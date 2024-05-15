@@ -4,7 +4,7 @@ import (
 	"context"
 	"database/sql"
 
-	"github.com/tmazitov/hahaton_moi/models"
+	"github.com/tmazitov/hackton_moi/models"
 )
 
 func (s *Storage) SaveGuideStatistic(ctx context.Context, record *models.StatisticRecord) error {

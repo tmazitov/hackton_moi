@@ -1,4 +1,4 @@
-module github.com/tmazitov/hahaton_moi
+module github.com/tmazitov/hackton_moi
 
 go 1.22.1
 

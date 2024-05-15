@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/lib/pq"
-	"github.com/tmazitov/hahaton_moi/models"
+	"github.com/tmazitov/hackton_moi/models"
 )
 
 func guideStepsToArray(guideSteps []*models.GuideStep) []int {

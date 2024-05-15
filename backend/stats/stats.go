@@ -4,8 +4,8 @@ import (
 	"context"
 	"log"
 
-	"github.com/tmazitov/hahaton_moi/models"
-	"github.com/tmazitov/hahaton_moi/storage"
+	"github.com/tmazitov/hackton_moi/models"
+	"github.com/tmazitov/hackton_moi/storage"
 )
 
 type StatsSaver struct {
@@ -34,16 +34,19 @@ func (s *StatsSaver) save(ctx context.Context, record *models.StatisticRecord) {
 
 func (s *StatsSaver) Run() {
 	var (
-		record *models.StatisticRecord
-		ctx    context.Context = context.Background()
+		record    *models.StatisticRecord
+		ctx       context.Context
+		ctxCancel context.CancelFunc
 	)
+
+	ctx, ctxCancel = context.WithCancel(context.Background())
 
 	for {
 		select {
 		case record = <-s.RecordChan:
 			s.save(ctx, record)
 		case <-s.QuitChan:
-			ctx.Done()
+			ctxCancel()
 			return
 		}
 	}
