@@ -20,22 +20,21 @@
 			height: 100%;
 			width: 100px;
 
-			border: 1px solid black;
-
 			display: flex;
 			align-items: center;
 			.left-buttons_calendar{
+				display: flex;
+				align-items: center;
+				justify-content: center;
 				height: 100%;
 				width: 50%;
 
-				border: 1px solid white;
+				
 			}
 		}
 		.top__right-buttons{
 			height: 100%;
 			width: 100px;
-
-			border: 1px solid black;
 
 			display: flex;
 			align-items: center;
@@ -43,13 +42,17 @@
 				height: 100%;
 				width: 50%;
 
-				border: 1px solid white;
+				display: flex;
+				align-items: center;
+				justify-content: center;
 			}
 			.right-buttons_rate-app{
 				height: 100%;
 				width: 50%;
 
-				border: 1px solid white;
+				display: flex;
+				align-items: center;
+				justify-content: center;
 			}
 		}
 	}

@@ -14,6 +14,8 @@ const Main = () => {
 			<Profile/>
 			<ActionCenter/>
 			<PointsBar/>
+			<PointsBar/>
+			<PointsBar/>
 		</div>
 	);
 };

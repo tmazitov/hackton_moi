@@ -1,12 +1,26 @@
 .service-card{
+	height: 110px;
+	width: 110px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+
+	margin: 3px;
+	background-color: var(--color--block);
+	border-radius: 7px;
 	.service-card_icon{
+		height: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
 	}
 	.service-card_name{
+		height: 50%;
+		display: flex;
+		justify-content: center;
+		text-align: center;
 
 	}
 }

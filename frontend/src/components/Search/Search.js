@@ -4,7 +4,9 @@ import "./Search.scss"
 const Search = () => {
 	return (
 		<div className="search">
-				<div className="lens-icon"><svg className='icon' xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1em" viewBox="0 0 256 256"><path fill="currentColor" d="M232.49 215.51L185 168a92.12 92.12 0 1 0-17 17l47.53 47.54a12 12 0 0 0 17-17ZM44 112a68 68 0 1 1 68 68a68.07 68.07 0 0 1-68-68"/></svg></div>
+				<div className="lens-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path fill="black" d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396l1.414-1.414l-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8s3.589 8 8 8m0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6s-6-2.691-6-6s2.691-6 6-6"/></svg>
+					</div>
 				<input type="text" className="search_input" placeholder='Search by service, sector'/>
 		</div>
 	);

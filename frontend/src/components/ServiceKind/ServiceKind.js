@@ -10,7 +10,7 @@ const ServiceKind = (props) => {
 			<div className="kind-container">
 				{
 					props.data.map((service)=>
-						<ServiceCard image=" " name={service.name}/>
+						<ServiceCard image={service.image} name={service.name}/>
 					)
 				}
 			</div>
