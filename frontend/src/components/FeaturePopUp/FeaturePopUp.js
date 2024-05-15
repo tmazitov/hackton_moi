@@ -73,7 +73,7 @@ const FeaturePopUp = (props) => {
 					</div>
 				</div>
 				<div className="feature-popup__results">
-					{output ? output.map((element=><SearchElement element={element}/>)) : ''}
+					{output ? output.map(((element, id)=><SearchElement key={id} element={element}/>)) : ''}
 				</div>
 				<Yalla el_id = {props.el_id}/>
 			</div>

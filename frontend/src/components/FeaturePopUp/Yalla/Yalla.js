@@ -9,7 +9,7 @@ const Yalla = (props) => {
 	const checkSelected = context.data.search.find((elem)=>elem.id === context.data.selectedId)
 
 	const handleClick = () => {
-		if(checkSearch)
+		if(checkSearch && checkSelected)
 		{
 			const widget = document.getElementById(props.el_id);
 			widget.classList.remove("feature-popup_true");
@@ -24,7 +24,7 @@ const Yalla = (props) => {
 	})
 	return (
 		<div id="yalla" ref={button} onClick={handleClick} className='yalla'>
-			Yalla!
+			Start!
 		</div>
 	);
 };
