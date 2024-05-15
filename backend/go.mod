@@ -7,7 +7,10 @@ require (
 	github.com/uptrace/bun/driver/pgdriver v1.2.1
 )
 
-require github.com/grokify/html-strip-tags-go v0.0.0-20200322061010-ea0c1cf2f119 // indirect
+require (
+	github.com/gin-contrib/cors v1.7.2 // indirect
+	github.com/grokify/html-strip-tags-go v0.0.0-20200322061010-ea0c1cf2f119 // indirect
+)
 
 require (
 	github.com/bytedance/sonic v1.11.6 // indirect

@@ -2,7 +2,9 @@ package main
 
 import (
 	"flag"
+	"time"
 
+	"github.com/gin-contrib/cors"
 	"github.com/tmazitov/hackton_moi/handlers"
 	"github.com/tmazitov/hackton_moi/stats"
 	"github.com/tmazitov/hackton_moi/storage"
@@ -40,6 +42,14 @@ func main() {
 	statsSaver = stats.NewStatsSaver(store)
 	defer statsSaver.Close()
 
+	s.GetCore().Use(cors.New(cors.Config{
+		AllowOrigins:     []string{"http://localhost:3000"},
+		AllowMethods:     []string{"GET", "POST", "OPTIONS"},
+		AllowHeaders:     []string{"Origin", "Content-Type"},
+		ExposeHeaders:    []string{"Content-Length"},
+		AllowCredentials: true,
+		MaxAge:           12 * time.Hour,
+	}))
 	s.SetupHandlers(handlers.Endpoints(statsSaver, store))
 	go statsSaver.Run()
 	s.Start()
