@@ -6,6 +6,7 @@ import Services from './pages/Services/Services.js';
 import Media from './pages/Media/Media.js';
 import Profile from './pages/Profile/Profile.js';
 import Help from './pages/Help/Help.js';
+import SearchPopUp from './components/SearchPopUp/SearchPopUp.js';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
 				<Route path='/services' element={<Services/>}/>
 				<Route path='/help' element={<Help/>}/>
 				<Route path='/profile' element={<Profile/>}/>
+				<Route path='/search' element={<SearchPopUp/>}/>
 			</Routes>
 			<Navigation/>
     </div>

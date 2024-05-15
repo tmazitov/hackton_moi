@@ -18,7 +18,7 @@ const Services = () => {
 			</header>
 			<EmptyHead/>
 			{
-				services.categories.map((kind)=><ServiceKind name={kind.name} data={kind.childrens}/>)
+				services.categories.map((kind, id)=><ServiceKind key={id} name={kind.name} data={kind.childrens}/>)
 			}
 			<EmptyHead/>
 		</div>
