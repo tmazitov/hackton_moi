@@ -9,9 +9,15 @@ import Help from './pages/Help/Help.js';
 import SearchPopUp from './components/SearchPopUp/SearchPopUp.js';
 import React from 'react';
 
+//{ data: [], func : f, guide: []}
+const initialData = {
+	search : [],
+	setData : ()=>{},
+	guide : []
+}
 export const Store = React.createContext()
 function Context({children}){
-	const [data, setData] = React.useState();
+	const [data, setData] = React.useState(initialData);
 	const value = {data: data, setData: setData}
 	return (
 		<Store.Provider value={value}>

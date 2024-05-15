@@ -1,6 +1,7 @@
 import React from 'react';
 import "./FeaturePopUp.scss"
 import { Store } from '../../App';
+import SearchElement from './SearchElement/SearchElement';
 
 const FeaturePopUp = (props) => {
 	const context = React.useContext(Store);
@@ -32,7 +33,7 @@ const FeaturePopUp = (props) => {
 		
 		if(!data)
 			return
-		context.setData(data);
+		context.setData({...context.data, search : data});
 		console.log("DATA:", context);
 		
 	}
@@ -58,6 +59,8 @@ const FeaturePopUp = (props) => {
 		}
 	})
 
+	const output = context.data.search
+	console.log("output:", output)
 	return (
 		<div className="shadow">
 
@@ -69,7 +72,7 @@ const FeaturePopUp = (props) => {
 					</div>
 				</div>
 				<div className="feature-popup__results">
-
+					{output ? output.map((element=><SearchElement element={element}/>)) : ''}
 				</div>
 			</div>
 		</div>
