@@ -1,8 +1,6 @@
 package handlers
 
 import (
-	"fmt"
-
 	"github.com/gin-gonic/gin"
 	"github.com/securisec/go-keywords"
 	"github.com/tmazitov/hackton_moi/models"
@@ -14,6 +12,7 @@ import (
 type GetGuideListParams struct {
 	Search string `json:"search" binding:"required"`
 }
+
 type GetGuideListHandler struct {
 	storage *storage.Storage
 	service.HandlerCoreBehavior[
@@ -42,8 +41,6 @@ func (h *GetGuideListHandler) Handle(ctx *gin.Context) {
 		ctx.JSON(500, gin.H{"error": err.Error()})
 		return
 	}
-
-	fmt.Println("Keywords: ", kw)
 
 	if len(kw) == 0 {
 		ctx.JSON(400, gin.H{"error": "no keywords"})

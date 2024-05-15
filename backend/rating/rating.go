@@ -1,7 +1,6 @@
 package rating
 
 import (
-	"fmt"
 	"sort"
 	"strings"
 
@@ -28,7 +27,6 @@ func Calculate(keywords []string, guides []*models.Guide) GuideRating {
 				rating++
 			}
 		}
-		fmt.Printf("Guide '%s' : rating : %d\n", guide.Name, rating)
 		// Store the rating for the message
 		ratings = append(ratings, GuideRatingElem{Guide: guide, Value: rating})
 	}
@@ -63,7 +61,6 @@ func TopList(r GuideRating) []*models.Guide {
 		ratingLength int             = Length(r)
 	)
 
-	fmt.Println("length : %d\n", ratingLength)
 	if ratingLength == 0 {
 		return topResults
 	}
