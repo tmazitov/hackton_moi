@@ -3,7 +3,7 @@ package storage
 import (
 	"context"
 
-	"github.com/tmazitov/hahaton_moi/models"
+	"github.com/tmazitov/hackton_moi/models"
 )
 
 func (s *Storage) GetGuideList(ctx context.Context, search string) ([]*models.Guide, error) {

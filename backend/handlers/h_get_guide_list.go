@@ -2,25 +2,56 @@ package handlers
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/tmazitov/hahaton_moi/models"
-	"github.com/tmazitov/hahaton_moi/storage"
+	"github.com/securisec/go-keywords"
+	"github.com/tmazitov/hackton_moi/models"
+	"github.com/tmazitov/hackton_moi/rating"
+	"github.com/tmazitov/hackton_moi/storage"
 	"github.com/tmazitov/service"
 )
 
+type GetGuideListParams struct {
+	Search string `json:"search" binding:"required"`
+}
+
 type GetGuideListHandler struct {
 	storage *storage.Storage
-	service.HandlerMonoWriteBehavior[[]*models.Guide]
+	service.HandlerCoreBehavior[
+		GetGuideListParams,
+		[]*models.Guide,
+	]
 }
 
 func (h *GetGuideListHandler) Handle(ctx *gin.Context) {
 
 	var (
-		search string = ctx.Query("search")
-		err    error
+		err          error
+		kw           []string
+		guides       []*models.Guide
+		guidesRating rating.GuideRating
+		search       string = h.Input.Search
 	)
 
-	if h.Output, err = h.storage.GetGuideList(ctx, search); err != nil {
+	if search == "" {
+		ctx.JSON(400, gin.H{"error": "search query parameter is required"})
+		return
+	}
+
+	kw, err = keywords.Extract(search)
+	if err != nil {
 		ctx.JSON(500, gin.H{"error": err.Error()})
 		return
 	}
+
+	if len(kw) == 0 {
+		ctx.JSON(400, gin.H{"error": "no keywords"})
+		return
+	}
+
+	if guides, err = h.storage.GetGuidesByKeywords(ctx, kw); err != nil {
+		ctx.JSON(400, gin.H{"error": err.Error()})
+		return
+	}
+
+	guidesRating = rating.Calculate(kw, guides)
+	h.Output = rating.TopList(guidesRating)
 }
