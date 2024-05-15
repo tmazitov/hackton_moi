@@ -24,6 +24,8 @@
 		border-radius: 20px;
 		display: none;
 		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
 		opacity: 0;
 		transition-duration: 0.3s;
 		.feature-popup__search{
@@ -43,12 +45,20 @@
 				justify-content: flex-start;
 				.search_input{
 					border: none;
-					width: 100%;
+					width: 90%;
 					height: 100%;
 
 					font-size: 23px;
 				}
 			}
+		}
+		.feature-popup__results{
+			width: 100%;
+			height: auto;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
 		}
 	}
 	.feature-popup_true{
