@@ -43,12 +43,12 @@ func (h *GetGuideListHandler) Handle(ctx *gin.Context) {
 	}
 
 	if len(kw) == 0 {
-		ctx.JSON(400, gin.H{"error": "no keywords"})
+		ctx.JSON(204, gin.H{"error": "no keywords"})
 		return
 	}
 
 	if guides, err = h.storage.GetGuidesByKeywords(ctx, kw); err != nil {
-		ctx.JSON(400, gin.H{"error": err.Error()})
+		ctx.JSON(204, gin.H{"error": err.Error()})
 		return
 	}
 
