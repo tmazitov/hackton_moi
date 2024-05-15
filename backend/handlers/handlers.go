@@ -9,8 +9,8 @@ import (
 func Endpoints(statsSaver *stats.StatsSaver, store *storage.Storage) []service.Endpoint {
 
 	return []service.Endpoint{
-		{Method: "GET", Path: "/guide/list", Handler: &GetGuideListHandler{storage: store}},
-		{Method: "GET", Path: "/guide/:guideId", Handler: &GetGuideHandler{
+		{Method: "POST", Path: "/guide/list", Handler: &GetGuideListHandler{storage: store}},
+		{Method: "GET", Path: "/guide", Handler: &GetGuideHandler{
 			storage:    store,
 			statsSaver: statsSaver,
 		}},

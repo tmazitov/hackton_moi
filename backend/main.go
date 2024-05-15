@@ -2,11 +2,10 @@ package main
 
 import (
 	"flag"
+	"fmt"
+	"log"
 
-	"github.com/tmazitov/hackton_moi/handlers"
-	"github.com/tmazitov/hackton_moi/stats"
-	"github.com/tmazitov/hackton_moi/storage"
-	"github.com/tmazitov/service"
+	"github.com/karan/vocabulary"
 )
 
 type Config struct {
@@ -23,24 +22,43 @@ func setupFlags() *Config {
 
 func main() {
 
-	var (
-		s *service.Service = service.NewService(&service.ServiceConfig{
-			Port:    5050,
-			Name:    "moi",
-			Prefix:  "moi",
-			Version: "v0",
-		})
-		store      *storage.Storage
-		statsSaver *stats.StatsSaver
-		config     *Config = setupFlags()
-	)
+	// var (
+	// 	s *service.Service = service.NewService(&service.ServiceConfig{
+	// 		Port:    5050,
+	// 		Name:    "moi",
+	// 		Prefix:  "moi",
+	// 		Version: "v0",
+	// 	})
+	// 	store      *storage.Storage
+	// 	statsSaver *stats.StatsSaver
+	// 	config     *Config = setupFlags()
+	// )
 
-	store = storage.NewStorage(config.StorageURL)
+	// store = storage.NewStorage(config.StorageURL)
 
-	statsSaver = stats.NewStatsSaver(store)
-	defer statsSaver.Close()
+	// statsSaver = stats.NewStatsSaver(store)
+	// defer statsSaver.Close()
 
-	s.SetupHandlers(handlers.Endpoints(statsSaver, store))
-	go statsSaver.Run()
-	s.Start()
+	// s.SetupHandlers(handlers.Endpoints(statsSaver, store))
+	// go statsSaver.Run()
+	// s.Start()
+
+	// Instantiate a Vocabulary object with your config
+	v, err := vocabulary.New(&vocabulary.Config{BigHugeLabsApiKey: "xxx", WordnikApiKey: "xxxx"})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// Create a new vocabulary.Word object, and collects all possible information.
+	word, err := v.Word("vuvuzela")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// fmt.Printf("word.Word = %s \n", word.Word)
+	// fmt.Printf("word.Meanings = %s \n", word.Meanings)
+	fmt.Printf("word.Synonyms = %s \n", word.Synonyms)
+	// fmt.Printf("word.Antonyms = %s \n", word.Antonyms)
+	// fmt.Printf("word.PartOfSpeech = %s \n", word.PartOfSpeech)
+	// fmt.Printf("word.UsageExample = %s \n", word.UsageExample)
 }

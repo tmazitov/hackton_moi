@@ -33,7 +33,7 @@ ALTER TABLE guide_steps
 
 -- +goose Down
 -- +goose StatementBegin
+DROP TABLE IF EXISTS guide_steps;
 DROP TABLE IF EXISTS steps;
 DROP TABLE IF EXISTS guides;
-DROP TABLE IF EXISTS guide_steps;
 -- +goose StatementEnd

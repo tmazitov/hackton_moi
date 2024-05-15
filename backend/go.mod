@@ -5,6 +5,12 @@ go 1.22.1
 require github.com/uptrace/bun/driver/pgdriver v1.2.1
 
 require (
+	github.com/grokify/html-strip-tags-go v0.0.0-20200322061010-ea0c1cf2f119 // indirect
+	github.com/karan/vocabulary v0.0.0-20151207201012-ca7289b4cdf4 // indirect
+	github.com/securisec/go-keywords v0.0.0-20200619134240-769e7273f2ed // indirect
+)
+
+require (
 	github.com/bytedance/sonic v1.11.6 // indirect
 	github.com/bytedance/sonic/loader v0.1.1 // indirect
 	github.com/cloudwego/base64x v0.1.4 // indirect
