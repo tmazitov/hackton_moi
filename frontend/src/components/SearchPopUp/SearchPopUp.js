@@ -4,6 +4,7 @@ import FeaturePopUp from '../FeaturePopUp/FeaturePopUp';
 import HelpButton from '../HelpButton/HelpButton';
 
 const SearchPopUp = () => {
+	console.log("parent")
 	const [help, setHelp] = React.useState(false)
 	const [searchValue, setSearchValue] = React.useState('');
 	const handleHelp = () => {
