@@ -10,7 +10,7 @@ func Endpoints(statsSaver *stats.StatsSaver, store *storage.Storage) []service.E
 
 	return []service.Endpoint{
 		{Method: "POST", Path: "/guide/list", Handler: &GetGuideListHandler{storage: store}},
-		{Method: "GET", Path: "/guide", Handler: &GetGuideHandler{
+		{Method: "GET", Path: "/guide/:guideId", Handler: &GetGuideHandler{
 			storage:    store,
 			statsSaver: statsSaver,
 		}},
