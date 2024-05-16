@@ -8,6 +8,8 @@ import Profile from './pages/Profile/Profile.js';
 import Help from './pages/Help/Help.js';
 import SearchPopUp from './components/SearchPopUp/SearchPopUp.js';
 import React from 'react';
+import TrafficFines from './pages/TrafficFines/TrafficFines.js';
+import Completion from './pages/TrafficFines/Completion/Completion.js';
 
 //{ data: [], func : f, guide: []}
 const initialData = {
@@ -37,6 +39,8 @@ function App() {
 					<Route path='/help' element={<Help/>}/>
 					<Route path='/profile' element={<Profile/>}/>
 					<Route path='/search' element={<SearchPopUp/>}/>
+					<Route path='/traffic-fines' element={<TrafficFines/>}/>				
+					<Route path='/traffic-fines/completion' element={<Completion/>}/>				
 				</Routes>
 				<Navigation/>
 		</div>

@@ -35,7 +35,6 @@ const FeaturePopUp = (props) => {
 		if(!data)
 			return
 		context.setData({...context.data, search : data});
-		//console.log("DATA:", context);
 		
 	}
 	React.useEffect(()=>{
@@ -61,7 +60,6 @@ const FeaturePopUp = (props) => {
 	})
 
 	const output = context.data.search
-	//console.log("output:", output)
 	return (
 		<div className="shadow">
 
