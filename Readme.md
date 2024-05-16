@@ -36,7 +36,8 @@ We are used these technologies to realize our project:
 
 - **Frontend**:
   - Written in JavaScript using the React.
-  - Something else... 
+  - The mobile application was implemented with all the necessary functionality to implement the feature, using tools such as React, react-router-dom, react-context.
+  - Additionally, everything was written according to the main programming principles such as SOLID, DRY (DO NOT REPEAT YOURSELF), KISS (KEEP IT SIMPLE, STUPID), AGNI (ARE YOU GONNA NEED IT). 
 
 ## Getting Started
 
