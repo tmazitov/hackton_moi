@@ -7,6 +7,8 @@ import services from '../../helpers/services_data';
 import ServiceKind from '../../components/ServiceKind/ServiceKind';
 
 const Services = () => {
+
+
 	return (
 		<div className='services'>
 			<header className="header">

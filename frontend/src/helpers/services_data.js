@@ -39,29 +39,29 @@ const services_data = {
                 }
             ]
         },
-        {
-            "name" : "Vehicle Services",
-            "childrens": [
-                {
-                    "name" : "Registered Vehicles"
-                },
-                {
-                    "name" :"Electronic Vehicle Card"
-                },
-                {
-                    "name" : "Isssuance of a Vehicle Registration"
-                },
-                {
-                    "name" : "Renew Vehicle Registration"
-                },
-                {
-                    "name" : "Transfer Vehicle Registration"
-                },
-                {
-                    "name" : "Transfer Vehicle Registration"
-                }
-            ]
-        }
+        //{
+        //    "name" : "Vehicle Services",
+        //    "childrens": [
+        //        {
+        //            "name" : "Registered Vehicles"
+        //        },
+        //        {
+        //            "name" :"Electronic Vehicle Card"
+        //        },
+        //        {
+        //            "name" : "Isssuance of a Vehicle Registration"
+        //        },
+        //        {
+        //            "name" : "Renew Vehicle Registration"
+        //        },
+        //        {
+        //            "name" : "Transfer Vehicle Registration"
+        //        },
+        //        {
+        //            "name" : "Transfer Vehicle Registration"
+        //        }
+        //    ]
+        //}
     ] 
 }
 
