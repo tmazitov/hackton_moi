@@ -1,7 +1,26 @@
-# 42 MOI innovation hackton
+# 42 MOI Innovation hackathon
 
 ## Feature
-Keep secret...
+**1.	Challenge:**
+Enhancing Accessibility of services for Seniors and People of Determination through using gamification elements.
+
+**Reasons: (why)**
+- Amount of services available on portal or application
+- Seniors find it challenging to grasp modern tools because of their age and unfamiliarity, while people of determination face difficulties due to their limitations in using these tools.
+
+**2.	Solution: (how)**
+
+Our idea aims to revolutionize accessibility for seniors and people of determination through gamification.
+
+We propose to create a tutorial guide designed like a game, offering an engaging and interactive way to learn essential navigation skills for public spaces. Users will progress through step-by-step walkthroughs.
+
+By merging gaming elements with accessibility training, we aspire to foster independence, confidence, and inclusivity in our communities.
+
+**3.	Interactive Tutorial: (what)**
+
+**MVP**
+
+
 
 ## Description
 This project is a web application consisting of backend and frontend parts.
