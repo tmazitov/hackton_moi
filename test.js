@@ -25,9 +25,7 @@ function focusElement(event) {
 	element.style.top = ''
 	element.style.left = ''
 
-	const input = container.children.item(0)
-	input.blur()
-
+	
 	if (buffer) {
 		container.removeChild(buffer)
 		buffer = null
@@ -36,7 +34,9 @@ function focusElement(event) {
 		container.removeChild(message)
 		message = null
 	}
-
+	const input = element.children.item(0)
+	input.blur()
+	
 	activeElement += 1
 	
 	const nextElement = elements[activeElement]
