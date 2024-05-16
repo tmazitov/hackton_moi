@@ -44,12 +44,11 @@
 		.shadow.active {
 			display: block;
 		}
-		/* .buffer {
-			display: none;
+		.message {
+			position: absolute;
+			z-index: 2;
+			color: orange;
 		}
-		.buffer.active {
-			display: block;
-		} */
 	</style>
 </head>
 <body>
@@ -57,16 +56,16 @@
 	<div class="container">
 		<div class="buffer"></div>
 		<button class="start">START!</button>
-		<div class="guide-step">
+		<div class="guide-step" id="button-1">
 			<button>Button one</button>
 		</div>
-		<div class="guide-step">
+		<div class="guide-step" id="button-2">
 			<button>Button two</button>
 		</div>
-		<div class="guide-step">
+		<div class="guide-step" id="button-3">
 			<button>Button tree</button>
 		</div>
-		<div class="guide-step">
+		<div class="guide-step" id="button-4">
 			<input type="text" placeholder="Something...">
 		</div>
 	</div>

@@ -1,10 +1,17 @@
 // Get all buttons and inputs on the page
 
 // Get the special green button
+let supportMessages = {
+	"button-1" : "Click here ! 1",
+	"button-2" : "Click here ! 2",
+	"button-3" : "Click here ! 3",
+	"button-4" : "Click here ! 4"
+}
 
 const overlay = document.querySelector('.shadow')
 
 let buffer = null
+let message = null
 let elements = null
 let activeElement = null
 
@@ -25,6 +32,10 @@ function focusElement(event) {
 		container.removeChild(buffer)
 		buffer = null
 	}
+	if (message) {
+		container.removeChild(message)
+		message = null
+	}
 
 	activeElement += 1
 	
@@ -32,10 +43,6 @@ function focusElement(event) {
 	if (!nextElement) {
 		overlay.classList.remove('active')
 		activeElement = null
-		if (buffer) {
-			container.removeChild(buffer)
-			buffer = null
-		}
 		elements.forEach(element => {
 			let field = element.children.item(0)
 			let isInputField = field.nodeName == 'INPUT'
@@ -67,6 +74,13 @@ function focusElement(event) {
 	buffer.style.height = `${nextElementRect.height}px`
 	buffer.style.width = `${nextElementRect.width}px`
 	container.insertBefore(buffer, nextElement)
+	
+	message = document.createElement('div')
+	message.classList.add("message")
+	message.style.left = `${nextElementRect.left}px`
+	message.style.top = `${nextElementRect.top - 20}px`
+	message.innerHTML = supportMessages[nextElement.id]
+	container.insertBefore(message, nextElement)
 	// Increment the index for the next iteration
 }
 
