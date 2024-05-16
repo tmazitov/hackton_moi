@@ -1,4 +1,48 @@
 .App {
 	height: 100%;
 	width: 100%;
+	/*display: grid;
+	grid-template-rows: 110px calc(100% - 110px - 100px) 100px;*/
+}
+/*.guide-step.overlay {
+	box-shadow: 0 0 25px 10px rgb(255, 255, 255);
+	border-radius: 20px;
+}
+
+.message {
+	position: absolute;
+	z-index: 100001;
+	color: orange;
+	font-size: 20px;
+}
+.touch{
+	z-index: 100000;
+	display: none;
+	position: absolute;
+	transform: rotate(180deg);
+}
+.touch.active{
+	display: block;
+}*/
+
+#button-1.guide-step{
+	background-color: goldenrod;
+	border-radius: 5px;
+}
+#button-2.guide-step{
+	background-color: goldenrod;
+}
+#button-3.guide-step{
+	background-color: goldenrod;
+	border-radius: 5px;
+	padding: 3px;
+}
+#button-4.guide-step{
+	background-color: goldenrod;
+}
+#button-5.guide-step{
+	background-color: goldenrod;
+}
+#button-6.guide-step{
+	background-color: goldenrod;
 }

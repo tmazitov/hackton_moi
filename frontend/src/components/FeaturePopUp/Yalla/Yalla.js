@@ -14,6 +14,7 @@ const Yalla = (props) => {
 			const widget = document.getElementById(props.el_id);
 			widget.classList.remove("feature-popup_true");
 			widget.parentElement.classList.remove("shadow_active");
+			context.setData({...context.data, currentStep : 0, launched : true})
 		}
 	}
 	React.useEffect(()=>{
@@ -21,6 +22,7 @@ const Yalla = (props) => {
 			button.current.classList.add("yalla_disabled")
 		else
 			button.current.classList.remove("yalla_disabled")
+		
 	})
 	return (
 		<div id="yalla" ref={button} onClick={handleClick} className='yalla'>
