@@ -8,6 +8,9 @@ let supportMessages = {
 	"button-4" : "Click here ! 4"
 }
 
+const touchSize = 64
+
+const touch = document.querySelector('.touch')
 const overlay = document.querySelector('.shadow')
 
 let buffer = null
@@ -42,6 +45,7 @@ function focusElement(event) {
 	const nextElement = elements[activeElement]
 	if (!nextElement) {
 		overlay.classList.remove('active')
+		touch.classList.remove('active')
 		activeElement = null
 		elements.forEach(element => {
 			let field = element.children.item(0)
@@ -69,6 +73,13 @@ function focusElement(event) {
 	if (!overlay.classList.contains('active'))
 		overlay.classList.add('active')
 
+	if (!touch.classList.contains('active'))
+		touch.classList.add('active')
+
+	let supportPosition = nextElementRect.left + input.getBoundingClientRect().width/2 - touchSize
+	touch.style.top = `${nextElementRect.top - touchSize - 10}px`
+	touch.style.left = `${supportPosition}px`
+
 	buffer = document.createElement('div')
 	buffer.classList.add("buffer")
 	buffer.style.height = `${nextElementRect.height}px`
@@ -77,8 +88,8 @@ function focusElement(event) {
 	
 	message = document.createElement('div')
 	message.classList.add("message")
-	message.style.left = `${nextElementRect.left}px`
-	message.style.top = `${nextElementRect.top - 20}px`
+	message.style.left = `${supportPosition+64+10}px`
+	message.style.top = `${nextElementRect.top - 20 - touchSize/2}px`
 	message.innerHTML = supportMessages[nextElement.id]
 	container.insertBefore(message, nextElement)
 	// Increment the index for the next iteration
