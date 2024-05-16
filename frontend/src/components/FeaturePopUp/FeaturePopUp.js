@@ -1,6 +1,8 @@
 import React from 'react';
 import "./FeaturePopUp.scss"
 import { Store } from '../../App';
+import SearchElement from './SearchElement/SearchElement';
+import Yalla from './Yalla/Yalla';
 
 const FeaturePopUp = (props) => {
 	const context = React.useContext(Store);
@@ -32,8 +34,8 @@ const FeaturePopUp = (props) => {
 		
 		if(!data)
 			return
-		context.setData(data);
-		console.log("DATA:", context);
+		context.setData({...context.data, search : data});
+		//console.log("DATA:", context);
 		
 	}
 	React.useEffect(()=>{
@@ -58,6 +60,8 @@ const FeaturePopUp = (props) => {
 		}
 	})
 
+	const output = context.data.search
+	//console.log("output:", output)
 	return (
 		<div className="shadow">
 
@@ -69,8 +73,9 @@ const FeaturePopUp = (props) => {
 					</div>
 				</div>
 				<div className="feature-popup__results">
-
+					{output ? output.map(((element, id)=><SearchElement key={id} element={element}/>)) : ''}
 				</div>
+				<Yalla el_id = {props.el_id}/>
 			</div>
 		</div>
 	);
